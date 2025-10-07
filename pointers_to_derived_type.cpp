@@ -10,7 +10,7 @@ class BaseClass {
     }
 };
 
-class DerivedClass : public BaseClass {
+class DerivedClass : public BaseClass {     // Derived class inheriting Base class
     public:
     int b;
     void showBase() {
@@ -34,6 +34,15 @@ int main() {
     ((DerivedClass*)Base_Ptr) -> b =15; // Type casting Base_Ptr to DerivedClass pointer
     ((DerivedClass*)Base_Ptr) -> showBase();
 
+
+
+
+    DerivedClass * Derived_Ptr;
+    // Derived_Ptr = Base_Obj; // This will throw an error as we cannot point derived class pointer to base class object
+   Derived_Ptr = &Derived_Obj; // Pointing derived class pointer to derived class object
+   Derived_Ptr->a= 100; // Accessing base class member using derived class pointer, this is allowed
+   Base_Ptr->showBase();
+   
     return 0;
 }
 
@@ -41,3 +50,9 @@ int main() {
 // then we can only access the members of base class using that pointer.
 // To access the members of derived class, we need to type cast the base class pointer to derived class pointer.
 // This is known as "downcasting".
+
+
+// Note: Downcasting is generally not recommended unless you are sure of the type of object being pointed to.
+
+// if we create a pointer of derived class and point it to base class object, it will throw an error.
+
