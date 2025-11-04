@@ -25,7 +25,8 @@ int main(){
     cout<<"Enter the Rate of interest: "<<endl;
     cin>>rate;
     cout<<"Enter the Time period: "<<endl;
-    SimpleInterest s1(1200, 2, 4);
+    cin>>time;
+    SimpleInterest s1(principal, rate, time);
     s1.display();
 
     return 0;
