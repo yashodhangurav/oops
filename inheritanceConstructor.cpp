@@ -6,28 +6,28 @@ class Alpha{
     public:
         Alpha(int x){
             i = x;
-            cout<<"Alpha initialised!!!\n";
+            cout<<"Alpha initialised!!!"<<"\n"<< i<<"\n";
         }
 };
 class Beta{
-    int j;
+    float j;
     public:
-        Beta(int y){
+        Beta(float y){
             j = y;
-            cout<<"Beta is initialised!!!\n";
+            cout<<"Beta is initialised!!!<<"<<"\n"<< j<<"\n";
         }
 };
 class Gamma : public Alpha, public Beta{                        //execution Order start according to this
     int k,l;
     public:
-        Gamma(int a, int b, int c, int d) : Alpha(a), Beta(b){
+        Gamma(int a, float b, int c, int d) : Alpha(a), Beta(b){
             k = c;
             l = d;
-            cout<<"Gamma is initialized!!!\n";
+            cout<<"Gamma is initialized!!!\n"<<" "<<k<<" "<<l<<"\n";
         }
 };
 
 int main(){
-    Gamma a(2,3,4,5);
+    Gamma a(2,3.7,4,5);
     return 0;
 }
